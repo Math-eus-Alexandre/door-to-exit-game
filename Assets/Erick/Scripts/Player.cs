@@ -41,15 +41,23 @@ public class Player : MonoBehaviour
 
     private void AtualizarAnim()
     {
+        // Velocidades para as animações de direção
         _animator.SetFloat("VelocidadeX", _rb.velocity.x);
         _animator.SetFloat("VelocidadeY", _rb.velocity.y);
 
+        // --- CAMINHANDO ---
         bool andando = _rb.velocity.magnitude > 0.1f;
         _animator.SetBool("Caminhando", andando);
 
-        
-        if (_rb.velocity.x > 0.1f) _sr.flipX = false;
-        else if (_rb.velocity.x < -0.1f) _sr.flipX = true;
+        // --- DIREÇÃO PARA CIMA/BAIXO ---
+        bool subindo = Mathf.Abs(_rb.velocity.y) > 0.1f;
+        _animator.SetBool("Atualizado", subindo);
+
+        // --- FLIP PARA ESQUERDA/DIREITA ---
+        if (_rb.velocity.x > 0.1f)
+            _sr.flipX = false;
+        else if (_rb.velocity.x < -0.1f)
+            _sr.flipX = true;
     }
     
     
