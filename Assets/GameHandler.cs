@@ -6,7 +6,7 @@ public static class AddRecord
     {
         int[] times = new int[5];
 
-        // Load
+        // Carregar
         for (int i = 0; i < 5; i++)
             times[i] = PlayerPrefs.GetInt("TopTimes_" + i, -1);
 
@@ -23,7 +23,7 @@ public static class AddRecord
             }
         }
 
-        // Save
+        // Salvar
         for (int i = 0; i < 5; i++)
             PlayerPrefs.SetInt("TopTimes_" + i, times[i]);
 

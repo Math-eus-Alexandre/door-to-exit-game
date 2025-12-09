@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CreditRoll : MonoBehaviour
 {
-    public float speed = 1.5f;
+    public float speed = 15f;
     public float startY = -600f;  // posição abaixo da tela
     public float endY = 2250f;     // posição acima da tela
 
