@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "door-to-exit-game.sln"
+    "dotnet.defaultSolution": "door-to-exit-game2.sln"
 }
