@@ -17,14 +17,15 @@ public class Top5Manager : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             int time = PlayerPrefs.GetInt("TopTimes_" + i, -1);
+            string name = PlayerPrefs.GetString("TopNames_" + i, "---");
 
             if (time == -1)
             {
-                result += (i + 1) + ". ---\n";
+                result += (i + 1) + ". ---  -  --:--\n";
             }
             else
             {
-                result += (i + 1) + ". " + FormatTime(time) + "\n";
+                result += (i + 1) + ". " + name + "  -  " + FormatTime(time) + "\n";
             }
         }
 

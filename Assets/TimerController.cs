@@ -103,7 +103,7 @@ public class TimerController : MonoBehaviour
 
         int tempoFinal = Mathf.FloorToInt(currentTime);
 
-        // Se for um recorde → pedir nome
+        // Se for um recorde, pedir nome
         if (IsNewRecord(tempoFinal))
         {
             NameInputUI.Instance.Show(tempoFinal);

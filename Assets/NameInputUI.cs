@@ -6,27 +6,33 @@ public class NameInputUI : MonoBehaviour
 {
     public static NameInputUI Instance;
 
-    public TMP_InputField nameField;
+    public GameObject panel;        // Painel que aparece
+    public TMP_InputField inputName;
+
     private int pendingTime;
 
     private void Awake()
     {
         Instance = this;
-        gameObject.SetActive(false);
     }
 
-    public void Show(int time)
+    public void Show(int timeToSave)
     {
-        pendingTime = time;
-        gameObject.SetActive(true);
+        pendingTime = timeToSave;
+        panel.SetActive(true);
+        inputName.text = "";
     }
 
-    public void Confirm()
+    public void Confirmar()
     {
-        string nome = nameField.text.Trim();
-        if (nome == "") nome = "Jogador";
+        string playerName = inputName.text.Trim();
 
-        TimerController.Instance.RegisterRecord(pendingTime, nome);
+        if (string.IsNullOrEmpty(playerName))
+        {
+            playerName = "Player";
+        }
+
+        TimerController.Instance.RegisterRecord(pendingTime, playerName);
 
         SceneManager.LoadScene("Top5");
     }
